@@ -1,0 +1,42 @@
+<html>
+<body>
+    <div>
+        <form method="post">
+            <div>
+                <input type="number" name="id" placeholder="Enter id">
+            </div>
+            <div>
+                <input type="number" name="components" placeholder="Enter components">
+            </div>
+            <div>
+                <input type="number" name="particles" placeholder="Enter particles">
+            </div>
+            <div>
+                <input type="number" name="basis" placeholder="Enter basis">
+            </div>
+            <div>
+                <input type="number" name="solutionPoints" placeholder="Enter solution points">
+            </div>
+            <div>
+                <input type="number" name="diagram" placeholder="Enter diagram">
+            </div>
+            <div>
+                <button type="submit">Confirm</button>
+            </div>
+        </form>
+    </div>
+
+    <div>Dimensions</div>
+    {{#dimensions}}
+        <div>
+            <b>{{id}}</b>
+            <span>{{components}}</span>
+            <span>{{particles}}</span>
+            <span>{{basis}}</span>
+            <span>{{solutionPoints}}</span>
+            <span>{{diagram}}</span>
+        </div>
+    {{/dimensions}}
+
+</body>
+</html>
