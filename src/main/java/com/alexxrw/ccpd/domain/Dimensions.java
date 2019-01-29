@@ -1,81 +1,91 @@
 package com.alexxrw.ccpd.domain;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.HashMap;
+import java.util.Map;
 
-@Entity
 public class Dimensions {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private static Map<String, Integer> dimensionsMap = new HashMap<>();
 
-    private static Integer components = 2;
-    private static Integer particles = 3;
-    private static Integer basis = 2;
-    private static Integer solutionPoints = 10;
-    private static Integer diagram = 1;
+    private Integer components = 2;
+    private Integer particles = 3;
+    private Integer basis = 2;
+    private Integer solutionPoints = 10;
+    private Integer diagram = 1;
 
-//    public Dimensions() {
-//
-//    }
-//
-//    public Dimensions(Integer components, Integer particles, Integer basis, Integer solutionPoints, Integer diagram) {
-//        this.components = components;
-//        this.particles = particles;
-//        this.basis = basis;
-//        this.solutionPoints = solutionPoints;
-//        this.diagram = diagram;
-//    }
-
-
-    public Long getId() {
-        return id;
+    {
+        dimensionsMap.put("components", 2);
+        dimensionsMap.put("particles", 3);
+        dimensionsMap.put("basis", 5);
+        dimensionsMap.put("solutionPoints", 10);
+        dimensionsMap.put("diagram", 1);
     }
 
-    public void setId(Long id) {
-        this.id = id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    private Long id;
+
+    public Dimensions() {
+
     }
 
-    public static Integer getComponents() {
+    public Dimensions(Integer components, Integer particles, Integer basis, Integer solutionPoints, Integer diagram) {
+        this.components = components;
+        this.particles = particles;
+        this.basis = basis;
+        this.solutionPoints = solutionPoints;
+        this.diagram = diagram;
+        dimensionsMap.put("components", components);
+        dimensionsMap.put("particles", particles);
+        dimensionsMap.put("basis", basis);
+        dimensionsMap.put("solutionPoints", solutionPoints);
+        dimensionsMap.put("diagram", diagram);
+    }
+
+    public Map<String, Integer> getDimensionsMap() {
+        return dimensionsMap;
+    }
+
+    public Integer getComponents() {
         return components;
     }
 
-    public static void setComponents(Integer components) {
-        Dimensions.components = components;
+    public void setComponents(Integer components) {
+        this.components = components;
     }
 
-    public static Integer getParticles() {
+    public Integer getParticles() {
         return particles;
     }
 
-    public static void setParticles(Integer particles) {
-        Dimensions.particles = particles;
+    public void setParticles(Integer particles) {
+        this.particles = particles;
     }
 
-    public static Integer getBasis() {
+    public Integer getBasis() {
         return basis;
     }
 
-    public static void setBasis(Integer basis) {
-        Dimensions.basis = basis;
+    public void setBasis(Integer basis) {
+        this.basis = basis;
     }
 
-    public static Integer getSolutionPoints() {
+    public Integer getSolutionPoints() {
         return solutionPoints;
     }
 
-    public static void setSolutionPoints(Integer solutionPoints) {
-        Dimensions.solutionPoints = solutionPoints;
+    public void setSolutionPoints(Integer solutionPoints) {
+        this.solutionPoints = solutionPoints;
     }
 
-    public static Integer getDiagram() {
+    public Integer getDiagram() {
         return diagram;
     }
 
-    public static void setDiagram(Integer diagram) {
-        Dimensions.diagram = diagram;
+    public void setDiagram(Integer diagram) {
+        this.diagram = diagram;
     }
 }
